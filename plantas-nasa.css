@@ -25,8 +25,29 @@ h1 {
   border-radius: 0;
   box-shadow: none;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.ficha .izquierda {
+  flex: 1 1 40%;
+  min-width: 180px;
+  max-width: 45%;
+  display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: flex-start;
+}
+
+.ficha .derecha {
+  flex: 1 1 60%;
+  min-width: 220px;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .ficha h2 {
@@ -53,10 +74,23 @@ h1 {
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .ficha {
+    flex-direction: column;
+    gap: 8px;
     padding-left: 4vw;
     padding-right: 4vw;
+  }
+  .ficha .izquierda,
+  .ficha .derecha {
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .ficha .derecha {
+    align-items: flex-start;
+    text-align: left;
   }
   h1 {
     font-size: 1.2em;
